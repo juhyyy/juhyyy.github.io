@@ -1,492 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Juhyeong Kang – AI & Deployment Strategy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Juhyeong Kang | Portfolio</title>
 
-  <!-- Inter font (Apple-like) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --text-main: #111111;
-      --text-sub: #4a4a4a;
-      --accent: #003c7a; /* 조금 더 딥한 팔란티어 블루 */
-      --bg: #ffffff;
-      --border: rgba(0,0,0,0.08);
-    }
+<style>
+/* ---------------------- */
+/*   GLOBAL STYLE         */
+/* ---------------------- */
 
-    * {
-      box-sizing: border-box;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+:root {
+  --accent-blue: #003c7a; /* Palantir Deep Blue */
+  --text-black: #111111;
+  --text-gray: #6b7280;
+  --bg-light: #f9fafb;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text-main);
-      margin: 0;
-      line-height: 1.55;
-      font-size: 16px;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: white;
+  color: var(--text-black);
+  line-height: 1.55;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
+/* ---------------------- */
+/*   NAVIGATION           */
+/* ---------------------- */
 
-    header {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 50px 20px 40px;
-    }
+nav {
+  width: 100%;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
 
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
+nav .name {
+  font-size: 17px;
+  font-weight: 600;
+}
 
-    nav {
-      display: flex;
-      gap: 24px;
-      font-size: 14.5px;
-    }
+nav .nav-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--text-black);
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.85;
+}
 
-    nav a {
-      color: var(--text-sub);
-      text-decoration: none;
-      font-weight: 400;
-    }
-    nav a:hover { color: var(--accent); }
+nav .nav-links a:hover {
+  opacity: 1;
+  color: var(--accent-blue);
+}
 
-    .btn-outline {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 7px 14px;
-      font-size: 13.5px;
-      background: #ffffff;
-      color: var(--text-main);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-    .btn-outline:hover {
-      background: #f5f5f5;
-      text-decoration: none;
-    }
+nav .cv-button {
+  margin-left: 28px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--text-black);
+  font-weight: 500;
+}
 
-    h1 {
-      font-size: 38px;
-      font-weight: 600;
-      margin: 0 0 8px;
-      letter-spacing: -0.5px;
-    }
+nav .cv-button:hover {
+  background: #f5f5f5;
+}
 
-    .subtitle {
-      font-size: 17px;
-      max-width: 650px;
-      color: var(--text-sub);
-      margin-bottom: 26px;
-    }
+/* ---------------------- */
+/*   HERO SECTION         */
+/* ---------------------- */
 
-    .hero-line {
-      font-size: 20px;
-      font-weight: 500;
-      margin: 26px 0 6px;
-      color: var(--text-main);
-      letter-spacing: -0.2px;
-    }
+.hero {
+  max-width: 880px;
+  margin: 80px auto 60px auto;
+  padding: 0 24px;
+}
 
-    .hero-note {
-      font-size: 14px;
-      color: var(--text-sub);
-      max-width: 520px;
-    }
+.hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: var(--text-black);
+}
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px 80px;
-    }
+.hero p {
+  font-size: 18px;
+  color: var(--text-gray);
+  max-width: 700px;
+}
 
-    section {
-      margin-top: 60px;
-    }
+/* ---------------------- */
+/*   ABOUT SECTION        */
+/* ---------------------- */
 
-    section h2 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+.section {
+  max-width: 880px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
 
-    .section-desc {
-      font-size: 15px;
-      color: var(--text-sub);
-      margin-bottom: 24px;
-      max-width: 650px;
-    }
+.section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
 
-    .card-grid {
-      display: grid;
-      gap: 22px;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    }
+.section p {
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 780px;
+}
 
-    .card {
-      padding: 22px 26px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #fff;
-      transition: all 0.18s ease;
-      cursor: default;
-    }
+/* ---------------------- */
+/*   PROJECT CARDS        */
+/* ---------------------- */
 
-    .card.linked {
-      cursor: pointer;
-    }
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
-    }
+.card {
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 22px;
+  border-radius: 12px;
+  background: white;
+  transition: all 0.22s ease;
+}
 
-    .card h3 {
-      font-size: 17px;
-      font-weight: 600;
-      margin: 0 0 6px;
-    }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+}
 
-    .meta {
-      font-size: 13px;
-      color: var(--text-sub);
-      margin-bottom: 14px;
-    }
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-    .label {
-      font-size: 11px;
-      text-transform: uppercase;
-      color: var(--text-sub);
-      font-weight: 600;
-      margin-top: 6px;
-      margin-bottom: 2px;
-      letter-spacing: 0.05em;
-    }
+.card p {
+  font-size: 14.5px;
+  color: var(--text-gray);
+}
 
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
-    }
+/* ---------------------- */
+/*   FOOTER               */
+/* ---------------------- */
 
-    .chip {
-      padding: 3px 9px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 12px;
-      color: #222;
-      background: #fafafa;
-    }
+footer {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 14px;
+}
+</style>
 
-    .inline-link {
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    .inline-link a {
-      font-size: 13px;
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .inline-link a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 20px 70px;
-      font-size: 13px;
-      color: #888;
-    }
-
-    /* 작은 화면 (모바일) 튜닝 */
-    @media (max-width: 640px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-      header {
-        padding-top: 32px;
-      }
-      h1 {
-        font-size: 30px;
-      }
-      .hero-line {
-        font-size: 18px;
-      }
-    }
-
-    /* 스크롤 애니메이션 */
-    .fade {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .fade.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
 </head>
-
 <body>
-  <header class="fade">
-    <div class="top-bar">
-      <nav>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#approach">Approach</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <!-- TODO: CV 링크 연결 (예: /Juhyeong_Kang_CV_2025.pdf) -->
-      <a
-        class="btn-outline"
-        href="/Juhyeong_Kang_CV_2025.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Download CV →
-      </a>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="name">Juhyeong Kang</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+    <a href="mailto:kju325@gmail.com">Contact</a>
+    <a class="cv-button" href="YOUR_CV_URL_HERE" target="_blank">Download CV</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>I design data workflows that make complex decisions clearer.</h1>
+  <p>I work at the intersection of users, data, and engineering — translating high-stakes problems into structured, actionable workflows aligned with real-world operations.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About</h2>
+  <p>
+    I’m an AI Researcher & Deployment Strategist candidate focusing on turning messy, siloed data into operational clarity.  
+    I specialize in workflow analysis, data integration, and translating ambiguous user needs into measurable pipelines — 
+    particularly for domains where accuracy, speed, and interpretability matter.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Selected Work</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>LLM + RAG Intent Analysis Pipeline</h3>
+      <p>Designed an LLM-RAG pipeline improving Korean intent classification accuracy from 57% → 84% using LangChain, LangGraph, FAISS.  
+      Reduced reasoning errors 62.6% and achieved 99% parsing stability.</p>
     </div>
 
-    <h1>Juhyeong Kang</h1>
-
-    <p class="subtitle">
-      AI Research & Deployment Strategy — working at the intersection of users,
-      data, and engineering to turn complex workflows into scalable, measurable systems.
-    </p>
-
-    <div class="hero-line">
-      I design data workflows that make complex decisions clearer.
+    <div class="card">
+      <h3>Clustering-based Social Interaction Profiling</h3>
+      <p>Clustered ASD learner dialogue/behavior logs (KMeans, UMAP) to build adaptive social-skill training templates powered by LLM prompts.</p>
     </div>
-    <p class="hero-note">
-      I focus on understanding how people actually work, then design pipelines and
-      products that help them reason better with their data.
-    </p>
-  </header>
 
-  <main>
-    <!-- ABOUT -->
-    <section id="about" class="fade">
-      <h2>About</h2>
-      <p class="section-desc">
-        I specialize in defining the right problems, identifying the most impactful
-        datasets, and structuring workflows that let people make better decisions with
-        their data. My experience ranges from medical AI (EEG, neuromodulation) to
-        LLM-powered RAG systems and clustering-based user profiling. I enjoy working
-        with cross-functional teams and translating between technical and non-technical
-        stakeholders.
-      </p>
-    </section>
+    <div class="card">
+      <h3>Virtual Brain Optimization (Neuromodulation)</h3>
+      <p>Used DDPG RL to optimize individualized stimulation parameters; +6.2% cosine similarity and 3.6× faster computation than grid search. Presented at OHBM 2024.</p>
+    </div>
 
-    <!-- WORK -->
-    <section id="work" class="fade">
-      <h2>Selected Work</h2>
-      <p class="section-desc">
-        Examples framed using Problem → Approach → Impact, similar to how I’d reason
-        through a Deployment Strategist case.
-      </p>
+    <div class="card">
+      <h3>EEG-based OSA Analysis (XAI)</h3>
+      <p>Extracted 29 EEG features and trained ML models predicting AHI/SpO₂ with 85–88% accuracy.  
+      Applied SHAP to reveal key channels contributing to prediction.</p>
+    </div>
 
-      <div class="card-grid">
+  </div>
+</section>
 
-        <!-- Project 1 -->
-        <div class="card linked" onclick="location.href='/rag/';">
-          <h3>LLM + RAG Intent Analysis Pipeline</h3>
-          <div class="meta">DX Education · 2025</div>
+<footer>
+  © 2025 Juhyeong Kang — Built with clarity & minimalism
+</footer>
 
-          <div class="label">Problem</div>
-          <p>
-            Existing Korean intent classifier (~57% accuracy) frequently mis-routed
-            user requests, breaking downstream automation and eroding trust.
-          </p>
-
-          <div class="label">Approach</div>
-          <p>
-            Rebuilt intent taxonomy with domain experts, then designed a modular
-            LangChain/LangGraph RAG pipeline with schema-validated LLM generations
-            and robust error handling.
-          </p>
-
-          <div class="label">Impact</div>
-          <p>
-            Improved intent accuracy to ~84%, reduced reasoning errors by 62.6%, and
-            achieved 99% parsing stability — enabling reliable automation on top of
-            the pipeline.
-          </p>
-
-          <div class="chip-row">
-            <span class="chip">LangChain</span>
-            <span class="chip">LangGraph</span>
-            <span class="chip">RAG</span>
-            <span class="chip">Pydantic</span>
-          </div>
-          <div class="inline-link">
-            <a href="/rag/">Read more →</a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="card linked" onclick="location.href='/brain-rl/';">
-          <h3>Virtual Brain Optimization (RL)</h3>
-          <div class="meta">Neuromodulation Research · 2023–2024</div>
-
-          <div class="label">Problem</div>
-          <p>
-            Stimulation parameters for neuromodulation were tuned manually, making it
-            slow and difficult to personalize across patients and scenarios.
-          </p>
-
-          <div class="label">Approach</div>
-          <p>
-            Used DDPG reinforcement learning on The Virtual Brain simulations to learn
-            policies that map brain states to optimized stimulation parameters,
-            under clinical constraints.
-          </p>
-
-          <div class="label">Impact</div>
-          <p>
-            Achieved an average 6.2% improvement in similarity to real brain signals
-            (up to 15.87% for some subjects) with 3.6× faster runtime than grid search,
-            making exploration of parameter space tractable.
-          </p>
-
-          <div class="chip-row">
-            <span class="chip">DDPG</span>
-            <span class="chip">RL</span>
-            <span class="chip">TensorFlow</span>
-            <span class="chip">The Virtual Brain</span>
-          </div>
-          <div class="inline-link">
-            <a href="/brain-rl/">Read more →</a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="card linked" onclick="location.href='/eeg-xai/';">
-          <h3>EEG-based OSA Analysis (XAI)</h3>
-          <div class="meta">Clinical AI · 2023</div>
-
-          <div class="label">Problem</div>
-          <p>
-            Clinicians needed interpretable EEG features to support AHI/SpO₂
-            prediction, not just black-box model outputs.
-          </p>
-
-          <div class="label">Approach</div>
-          <p>
-            Engineered 29 time-series EEG features, trained ML regressors
-            (XGBoost, SVM, RF), and added a SHAP-based explanation layer to surface
-            channel-level importance.
-          </p>
-
-          <div class="label">Impact</div>
-          <p>
-            Achieved 85–88% prediction accuracy while highlighting 6 key EEG
-            channels, giving clinicians a transparent starting point for further
-            investigation.
-          </p>
-
-          <div class="chip-row">
-            <span class="chip">XGBoost</span>
-            <span class="chip">SHAP</span>
-            <span class="chip">EEG</span>
-          </div>
-          <div class="inline-link">
-            <a href="/eeg-xai/">Read more →</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section id="approach" class="fade">
-      <h2>Approach</h2>
-      <p class="section-desc">
-        How I like to work across users, workflows, and engineering teams.
-      </p>
-
-      <div class="card">
-        <h3>Start from the decision, not the model</h3>
-        <p>
-          I begin with the real decisions stakeholders need to make, the constraints
-          they operate under, and what “better” looks like. From there, I work
-          backwards to the data and technical choices.
-        </p>
-
-        <h3 style="margin-top: 18px;">Make complexity legible</h3>
-        <p>
-          I clarify assumptions, edge cases, and trade-offs early. I prefer
-          explicit reasoning and documentation over “magic” so others can trust and
-          extend the system.
-        </p>
-
-        <h3 style="margin-top: 18px;">Iterate with users in the loop</h3>
-        <p>
-          I like to ship small, focused workflows, gather feedback, and refine based
-          on how people actually use the tool — keeping an eye on the metrics that
-          matter for the organization.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="fade">
-      <h2>Contact</h2>
-      <p class="section-desc">
-        Email:
-        <a href="mailto:kju325@gmail.com">kju325@gmail.com</a><br />
-        LinkedIn:
-        <a href="https://linkedin.com/in/juhy" target="_blank" rel="noopener noreferrer">
-          linkedin.com/in/juhy
-        </a>
-      </p>
-    </section>
-  </main>
-
-  <footer class="fade">
-    © 2025 · Juhyeong Kang
-  </footer>
-
-  <script>
-    // 스크롤 시 부드럽게 나타나는 효과
-    const fadeEls = document.querySelectorAll('.fade');
-
-    const onScroll = () => {
-      const triggerBottom = window.innerHeight * 0.9;
-      fadeEls.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < triggerBottom) {
-          el.classList.add('in');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('load', onScroll);
-  </script>
 </body>
 </html>
