@@ -3,93 +3,73 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Juhyeong Kang | Portfolio</title>
+<title>Juhyeong Kang | Deployment Strategy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ---------------------- */
-/*   GLOBAL STYLE         */
-/* ---------------------- */
-
 :root {
-  --accent-blue: #003c7a; /* Palantir Deep Blue */
-  --text-black: #111111;
+  --palantir-blue: #003c7a;
+  --text-dark: #0f1115;
   --text-gray: #6b7280;
-  --bg-light: #f9fafb;
+  --border: rgba(0,0,0,0.08);
 }
 
 body {
   margin: 0;
   padding: 0;
+  background: #ffffff;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: white;
-  color: var(--text-black);
-  line-height: 1.55;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* ---------------------- */
-/*   NAVIGATION           */
-/* ---------------------- */
-
+/* NAV */
 nav {
-  width: 100%;
-  padding: 18px 32px;
+  padding: 22px 42px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--border);
   background: white;
 }
 
-nav .name {
-  font-size: 17px;
+nav .left {
+  font-size: 18px;
   font-weight: 600;
 }
 
-nav .nav-links a {
-  margin-left: 24px;
+nav .right a {
+  margin-left: 26px;
   text-decoration: none;
-  color: var(--text-black);
+  color: var(--text-dark);
   font-size: 15px;
-  font-weight: 500;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
-nav .nav-links a:hover {
+nav .right a:hover {
+  color: var(--palantir-blue);
   opacity: 1;
-  color: var(--accent-blue);
 }
 
-nav .cv-button {
-  margin-left: 28px;
-  padding: 6px 14px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 8px;
-  font-size: 14px;
-  text-decoration: none;
-  color: var(--text-black);
-  font-weight: 500;
+/* LAYOUT */
+.wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 28px;
 }
 
-nav .cv-button:hover {
-  background: #f5f5f5;
-}
-
-/* ---------------------- */
-/*   HERO SECTION         */
-/* ---------------------- */
-
+/* HERO */
 .hero {
-  max-width: 880px;
-  margin: 80px auto 60px auto;
-  padding: 0 24px;
+  margin-top: 72px;
+  margin-bottom: 72px;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 600;
+  color: var(--text-dark);
   margin-bottom: 18px;
-  color: var(--text-black);
 }
 
 .hero p {
@@ -98,137 +78,214 @@ nav .cv-button:hover {
   max-width: 700px;
 }
 
-/* ---------------------- */
-/*   ABOUT SECTION        */
-/* ---------------------- */
-
+/* SECTIONS */
 .section {
-  max-width: 880px;
-  margin: 80px auto;
-  padding: 0 24px;
+  margin: 80px 0;
 }
 
 .section h2 {
   font-size: 26px;
-  font-weight: 600;
   margin-bottom: 22px;
+  font-weight: 600;
 }
 
 .section p {
+  color: var(--text-gray);
   font-size: 16px;
-  color: var(--text-gray);
-  max-width: 780px;
 }
 
-/* ---------------------- */
-/*   PROJECT CARDS        */
-/* ---------------------- */
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-  margin-top: 28px;
-}
-
-.card {
-  border: 1px solid rgba(0,0,0,0.08);
-  padding: 22px;
+/* PROJECT BLOCKS (Palantir Doc style) */
+.project-block {
+  border: 1px solid var(--border);
+  padding: 28px;
   border-radius: 12px;
-  background: white;
-  transition: all 0.22s ease;
+  margin-bottom: 28px;
+  transition: 0.2s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+.project-block:hover {
+  border-color: var(--palantir-blue);
+  background: #f9fbff;
 }
 
-.card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+.project-block h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
-.card p {
-  font-size: 14.5px;
+.project-meta {
+  font-size: 14px;
+  color: var(--palantir-blue);
+  margin-bottom: 16px;
+}
+
+.project-block ul {
+  padding-left: 20px;
   color: var(--text-gray);
+  margin: 0;
 }
 
-/* ---------------------- */
-/*   FOOTER               */
-/* ---------------------- */
+.project-block li {
+  margin-bottom: 6px;
+}
 
+/* FOOTER */
 footer {
-  padding: 60px 24px;
+  margin: 90px 0 50px 0;
   text-align: center;
   color: var(--text-gray);
   font-size: 14px;
 }
 </style>
-
 </head>
+
+
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
-  <div class="name">Juhyeong Kang</div>
-  <div class="nav-links">
+  <div class="left">Juhyeong Kang</div>
+  <div class="right">
     <a href="#about">About</a>
-    <a href="#projects">Work</a>
+    <a href="#work">Work</a>
     <a href="mailto:kju325@gmail.com">Contact</a>
-    <a class="cv-button" href="YOUR_CV_URL_HERE" target="_blank">Download CV</a>
+    <a href="YOUR_CV_LINK_HERE" target="_blank">Download CV</a>
   </div>
 </nav>
 
+
+<div class="wrapper">
+
 <!-- HERO -->
 <section class="hero">
-  <h1>I design data workflows that make complex decisions clearer.</h1>
-  <p>I work at the intersection of users, data, and engineering — translating high-stakes problems into structured, actionable workflows aligned with real-world operations.</p>
+  <h1>Transforming data into operational clarity.</h1>
+  <p>
+    I work at the intersection of data, workflows, and decision-making — translating messy, siloed information into structured pipelines that drive real-world impact.
+  </p>
 </section>
+
 
 <!-- ABOUT -->
 <section id="about" class="section">
   <h2>About</h2>
   <p>
-    I’m an AI Researcher & Deployment Strategist candidate focusing on turning messy, siloed data into operational clarity.  
-    I specialize in workflow analysis, data integration, and translating ambiguous user needs into measurable pipelines — 
-    particularly for domains where accuracy, speed, and interpretability matter.
+    I focus on understanding how people work, where data lives, and how decisions are made — then designing workflows that reduce ambiguity and create measurable outcomes. 
+    With experience across healthcare AI, LLM-based reasoning systems, and multimodal behavioral modeling, I build pipelines that are interpretable, stable, and aligned with operational reality.
   </p>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <h2>Selected Work</h2>
 
-  <div class="projects">
+<!-- WORK -->
+<section id="work" class="section">
+  <h2>Operational Impact</h2>
 
-    <div class="card">
-      <h3>LLM + RAG Intent Analysis Pipeline</h3>
-      <p>Designed an LLM-RAG pipeline improving Korean intent classification accuracy from 57% → 84% using LangChain, LangGraph, FAISS.  
-      Reduced reasoning errors 62.6% and achieved 99% parsing stability.</p>
-    </div>
+  <!-- PROJECT 1 -->
+  <div class="project-block">
+    <h3>LLM + RAG Intent Analysis Pipeline</h3>
+    <div class="project-meta">LangChain · LangGraph · FAISS · Pydantic</div>
 
-    <div class="card">
-      <h3>Clustering-based Social Interaction Profiling</h3>
-      <p>Clustered ASD learner dialogue/behavior logs (KMeans, UMAP) to build adaptive social-skill training templates powered by LLM prompts.</p>
-    </div>
+    <strong>Problem</strong>
+    <ul>
+      <li>User logs were noisy, ambiguous, and inconsistently labeled, leading to unreliable intent classification.</li>
+    </ul>
 
-    <div class="card">
-      <h3>Virtual Brain Optimization (Neuromodulation)</h3>
-      <p>Used DDPG RL to optimize individualized stimulation parameters; +6.2% cosine similarity and 3.6× faster computation than grid search. Presented at OHBM 2024.</p>
-    </div>
+    <strong>Approach</strong>
+    <ul>
+      <li>Redefined intent categories into meaningful semantic units aligned with user behavior.</li>
+      <li>Built a retrieval pipeline using FAISS + RAG for grounded context retrieval.</li>
+      <li>Introduced Pydantic schema validation to stabilize LLM outputs.</li>
+    </ul>
 
-    <div class="card">
-      <h3>EEG-based OSA Analysis (XAI)</h3>
-      <p>Extracted 29 EEG features and trained ML models predicting AHI/SpO₂ with 85–88% accuracy.  
-      Applied SHAP to reveal key channels contributing to prediction.</p>
-    </div>
-
+    <strong>Impact</strong>
+    <ul>
+      <li>Accuracy improved from <b>57% → 84%</b>.</li>
+      <li>Reasoning errors reduced by <b>62.6%</b>.</li>
+      <li>Pipeline stability maintained at <b>99%</b> across evaluation sets.</li>
+    </ul>
   </div>
+
+
+  <!-- PROJECT 2 -->
+  <div class="project-block">
+    <h3>Behavioral Interaction Profiling (ASD)</h3>
+    <div class="project-meta">KMeans · UMAP · LLM Prompt Templates</div>
+
+    <strong>Problem</strong>
+    <ul>
+      <li>Behavioral patterns in ASD learners varied significantly, making personalized scenario design inconsistent.</li>
+    </ul>
+
+    <strong>Approach</strong>
+    <ul>
+      <li>Reconstructed logs into entity-based behavioral units.</li>
+      <li>Clustered interaction patterns to build interpretable learner profiles.</li>
+      <li>Converted profiles into adaptive LLM prompt templates.</li>
+    </ul>
+
+    <strong>Impact</strong>
+    <ul>
+      <li>Reduced manual scenario design time for educators.</li>
+      <li>Improved consistency across personalized training pathways.</li>
+    </ul>
+  </div>
+
+
+  <!-- PROJECT 3 -->
+  <div class="project-block">
+    <h3>Virtual Brain Optimization for Neuromodulation</h3>
+    <div class="project-meta">RL (DDPG) · TensorFlow · OHBM 2024</div>
+
+    <strong>Problem</strong>
+    <ul>
+      <li>Personalized brain stimulation required slow, expensive simulation cycles.</li>
+    </ul>
+
+    <strong>Approach</strong>
+    <ul>
+      <li>Integrated structural & functional data into individualized virtual brain models.</li>
+      <li>Used DDPG reinforcement learning to optimize stimulation parameters.</li>
+      <li>Evaluation based on cosine similarity of expected vs. simulated neural responses.</li>
+    </ul>
+
+    <strong>Impact</strong>
+    <ul>
+      <li>Simulation accuracy improved by <b>6.2%</b> on average (up to 15.8%).</li>
+      <li>Runtime improved by <b>3.6×</b> vs. grid search.</li>
+      <li>Presented at <b>OHBM 2024</b>.</li>
+    </ul>
+  </div>
+
+
+  <!-- PROJECT 4 -->
+  <div class="project-block">
+    <h3>EEG-based OSA Prediction (XAI)</h3>
+    <div class="project-meta">XGBoost · SVM · SHAP</div>
+
+    <strong>Problem</strong>
+    <ul>
+      <li>EEG data was noisy and difficult to interpret, complicating OSA severity prediction.</li>
+    </ul>
+
+    <strong>Approach</strong>
+    <ul>
+      <li>Extracted 29 EEG features and standardized channel-level entities.</li>
+      <li>Trained multiple ML models to evaluate predictive performance.</li>
+      <li>Applied SHAP to surface clinically meaningful EEG channels.</li>
+    </ul>
+
+    <strong>Impact</strong>
+    <ul>
+      <li>Achieved <b>85–88%</b> prediction accuracy.</li>
+      <li>Identified top contributing channels supporting clinical decision-making.</li>
+    </ul>
+  </div>
+
 </section>
 
+</div>
+
 <footer>
-  © 2025 Juhyeong Kang — Built with clarity & minimalism
+  © 2025 Juhyeong Kang — Built with clarity & minimalism.
 </footer>
 
 </body>
