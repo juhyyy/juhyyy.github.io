@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Juhyeong Kang | Deployment Strategy</title>
+<title>Juhyeong Kang | Deployment Strategy & Applied AI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -13,6 +13,7 @@
   --text-dark: #0f1115;
   --text-gray: #6b7280;
   --border: rgba(0,0,0,0.08);
+  --bg-ontology: #f9fbff;
 }
 
 body {
@@ -65,15 +66,21 @@ nav .right a:hover {
   margin-bottom: 72px;
 }
 
-.hero h1 {
+.hero-name {
   font-size: 40px;
   font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 18px;
+  margin-bottom: 6px;
 }
 
-.hero p {
-  font-size: 18px;
+.hero-role {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--palantir-blue);
+  margin-bottom: 20px;
+}
+
+.hero-summary {
+  font-size: 17px;
   color: var(--text-gray);
   max-width: 700px;
 }
@@ -94,13 +101,56 @@ nav .right a:hover {
   font-size: 16px;
 }
 
-/* PROJECT BLOCKS (Palantir Doc style) */
+/* ONTOLOGY SECTION */
+.ontology-wrapper {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 22px 26px 22px;
+  background: var(--bg-ontology);
+}
+
+.ontology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.ontology-node {
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: #ffffff;
+  padding: 14px 14px 16px 14px;
+}
+
+.ontology-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--palantir-blue);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ontology-node ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.ontology-node li {
+  font-size: 13.5px;
+  color: var(--text-gray);
+  margin-bottom: 4px;
+}
+
+/* PROJECT BLOCKS */
 .project-block {
   border: 1px solid var(--border);
-  padding: 28px;
+  padding: 24px 24px 26px 24px;
   border-radius: 12px;
   margin-bottom: 28px;
   transition: 0.2s ease;
+  background: #ffffff;
 }
 
 .project-block:hover {
@@ -110,19 +160,29 @@ nav .right a:hover {
 
 .project-block h3 {
   font-size: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .project-meta {
   font-size: 14px;
   color: var(--palantir-blue);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
+/* PROJECT IMAGE */
+.project-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  object-fit: cover;
+}
+
+/* LISTS */
 .project-block ul {
   padding-left: 20px;
   color: var(--text-gray);
-  margin: 0;
+  margin: 4px 0 10px 0;
 }
 
 .project-block li {
@@ -147,6 +207,7 @@ footer {
   <div class="left">Juhyeong Kang</div>
   <div class="right">
     <a href="#about">About</a>
+    <a href="#ontology">Ontology</a>
     <a href="#work">Work</a>
     <a href="mailto:kju325@gmail.com">Contact</a>
     <a href="YOUR_CV_LINK_HERE" target="_blank">Download CV</a>
@@ -156,136 +217,201 @@ footer {
 
 <div class="wrapper">
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Transforming data into operational clarity.</h1>
-  <p>
-    I work at the intersection of data, workflows, and decision-making — translating messy, siloed information into structured pipelines that drive real-world impact.
-  </p>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-name">Juhyeong Kang</div>
+    <div class="hero-role">Deployment Strategy & Applied AI</div>
+    <p class="hero-summary">
+      I design data workflows that connect users, models, and operations. 
+      My work focuses on turning noisy, fragmented information into structured pipelines that enable clearer decisions in high-stakes environments.
+    </p>
+  </section>
 
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>
+      I work across problem framing, data modeling, and workflow design. 
+      From healthcare AI to LLM-based reasoning systems, I focus on how people actually use tools:
+      what questions they ask, which signals they trust, and how data needs to be shaped 
+      so it becomes useful in their day-to-day decisions.
+    </p>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h2>About</h2>
-  <p>
-    I focus on understanding how people work, where data lives, and how decisions are made — then designing workflows that reduce ambiguity and create measurable outcomes. 
-    With experience across healthcare AI, LLM-based reasoning systems, and multimodal behavioral modeling, I build pipelines that are interpretable, stable, and aligned with operational reality.
-  </p>
-</section>
+  <!-- ONTOLOGY STYLE SECTION -->
+  <section id="ontology" class="section">
+    <h2>System Ontology</h2>
+    <div class="ontology-wrapper">
+      <p style="margin-top:0; font-size:14.5px; color:var(--text-gray);">
+        A simplified view of how my work connects <b>data sources</b>, <b>models</b>, <b>workflows</b>, 
+        and <b>operational outcomes</b> — similar in spirit to a Foundry Ontology, where objects and relationships 
+        are explicit rather than implicit.
+      </p>
 
+      <div class="ontology-grid">
+        <div class="ontology-node">
+          <div class="ontology-title">Data Sources</div>
+          <ul>
+            <li>4D Ultrasound Frames & Medical Imaging</li>
+            <li>EEG Signals (AHI, SpO₂-related)</li>
+            <li>Behavioral & Dialogue Logs (ASD)</li>
+            <li>Text Logs for Intent Classification</li>
+          </ul>
+        </div>
 
-<!-- WORK -->
-<section id="work" class="section">
-  <h2>Operational Impact</h2>
+        <div class="ontology-node">
+          <div class="ontology-title">Model Objects</div>
+          <ul>
+            <li>LLM + RAG Intent Engine</li>
+            <li>Interaction Clusters & Profiles</li>
+            <li>Virtual Brain RL Optimizer</li>
+            <li>EEG-based OSA Risk Models</li>
+          </ul>
+        </div>
 
-  <!-- PROJECT 1 -->
-  <div class="project-block">
-    <h3>LLM + RAG Intent Analysis Pipeline</h3>
-    <div class="project-meta">LangChain · LangGraph · FAISS · Pydantic</div>
+        <div class="ontology-node">
+          <div class="ontology-title">Workflows</div>
+          <ul>
+            <li>Evidence-grounded intent classification with schema validation</li>
+            <li>Adaptive social-skill training scenarios</li>
+            <li>Personalized neuromodulation parameter search</li>
+            <li>Treatment planning & biomarker monitoring flows</li>
+          </ul>
+        </div>
 
-    <strong>Problem</strong>
-    <ul>
-      <li>User logs were noisy, ambiguous, and inconsistently labeled, leading to unreliable intent classification.</li>
-    </ul>
+        <div class="ontology-node">
+          <div class="ontology-title">Outcomes</div>
+          <ul>
+            <li>Intent accuracy +27%p, errors −62.6%</li>
+            <li>Reduced manual analysis for educators & clinicians</li>
+            <li>3.6× faster simulation with improved similarity</li>
+            <li>Explainable EEG features supporting decisions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <strong>Approach</strong>
-    <ul>
-      <li>Redefined intent categories into meaningful semantic units aligned with user behavior.</li>
-      <li>Built a retrieval pipeline using FAISS + RAG for grounded context retrieval.</li>
-      <li>Introduced Pydantic schema validation to stabilize LLM outputs.</li>
-    </ul>
+  <!-- WORK -->
+  <section id="work" class="section">
+    <h2>Operational Impact</h2>
 
-    <strong>Impact</strong>
-    <ul>
-      <li>Accuracy improved from <b>57% → 84%</b>.</li>
-      <li>Reasoning errors reduced by <b>62.6%</b>.</li>
-      <li>Pipeline stability maintained at <b>99%</b> across evaluation sets.</li>
-    </ul>
-  </div>
+    <!-- PROJECT 1 -->
+    <div class="project-block">
+      <h3>LLM + RAG Intent Analysis Pipeline</h3>
+      <div class="project-meta">LangChain · LangGraph · FAISS · Pydantic</div>
 
+      <!-- 이미지: rag-intent -->
+      <img src="images/rag-intent.png" alt="RAG intent analysis workflow" class="project-image" />
 
-  <!-- PROJECT 2 -->
-  <div class="project-block">
-    <h3>Behavioral Interaction Profiling (ASD)</h3>
-    <div class="project-meta">KMeans · UMAP · LLM Prompt Templates</div>
+      <strong>Problem</strong>
+      <ul>
+        <li>User logs were noisy, ambiguous, and inconsistently labeled, leading to unreliable intent classification.</li>
+      </ul>
 
-    <strong>Problem</strong>
-    <ul>
-      <li>Behavioral patterns in ASD learners varied significantly, making personalized scenario design inconsistent.</li>
-    </ul>
+      <strong>Approach</strong>
+      <ul>
+        <li>Redefined intent categories into meaningful semantic buckets aligned with user behavior.</li>
+        <li>Built a FAISS-backed RAG pipeline to retrieve grounded evidence for each prediction.</li>
+        <li>Enforced response structure using Pydantic schema validation and retry logic in LangGraph.</li>
+      </ul>
 
-    <strong>Approach</strong>
-    <ul>
-      <li>Reconstructed logs into entity-based behavioral units.</li>
-      <li>Clustered interaction patterns to build interpretable learner profiles.</li>
-      <li>Converted profiles into adaptive LLM prompt templates.</li>
-    </ul>
+      <strong>Impact</strong>
+      <ul>
+        <li>Accuracy improved from <b>57% → 84%</b>.</li>
+        <li>Reasoning errors reduced by <b>62.6%</b>, with RAG-only errors down by 14.1%.</li>
+        <li>Parsing stability reached <b>99%</b> with zero unsupported, evidence-free answers.</li>
+      </ul>
+    </div>
 
-    <strong>Impact</strong>
-    <ul>
-      <li>Reduced manual scenario design time for educators.</li>
-      <li>Improved consistency across personalized training pathways.</li>
-    </ul>
-  </div>
+    <!-- PROJECT 2 -->
+    <div class="project-block">
+      <h3>Behavioral Interaction Profiling (ASD)</h3>
+      <div class="project-meta">KMeans · UMAP · LLM Prompt Templates</div>
 
+      <!-- 이미지: asd-cluster -->
+      <img src="images/asd-cluster.png" alt="ASD cluster visualization" class="project-image" />
 
-  <!-- PROJECT 3 -->
-  <div class="project-block">
-    <h3>Virtual Brain Optimization for Neuromodulation</h3>
-    <div class="project-meta">RL (DDPG) · TensorFlow · OHBM 2024</div>
+      <strong>Problem</strong>
+      <ul>
+        <li>ASD learner behavior varied widely, making personalized scenario design inconsistent and hard to scale.</li>
+      </ul>
 
-    <strong>Problem</strong>
-    <ul>
-      <li>Personalized brain stimulation required slow, expensive simulation cycles.</li>
-    </ul>
+      <strong>Approach</strong>
+      <ul>
+        <li>Standardized dialogue and behavior logs into comparable metrics (turn-taking, utterance length, question/command ratios).</li>
+        <li>Clustered patterns using KMeans + UMAP and validated internal consistency (e.g., silhouette, DBI).</li>
+        <li>Mapped each cluster to conversational templates and LLM prompt rules for scenario generation.</li>
+      </ul>
 
-    <strong>Approach</strong>
-    <ul>
-      <li>Integrated structural & functional data into individualized virtual brain models.</li>
-      <li>Used DDPG reinforcement learning to optimize stimulation parameters.</li>
-      <li>Evaluation based on cosine similarity of expected vs. simulated neural responses.</li>
-    </ul>
+      <strong>Impact</strong>
+      <ul>
+        <li>Produced interpretable profiles with key traits, cautions, and recommended feedback strategies.</li>
+        <li>Formed the core module for an ASD social-skills education concept, including flow diagrams and demo scenarios.</li>
+      </ul>
+    </div>
 
-    <strong>Impact</strong>
-    <ul>
-      <li>Simulation accuracy improved by <b>6.2%</b> on average (up to 15.8%).</li>
-      <li>Runtime improved by <b>3.6×</b> vs. grid search.</li>
-      <li>Presented at <b>OHBM 2024</b>.</li>
-    </ul>
-  </div>
+    <!-- PROJECT 3 -->
+    <div class="project-block">
+      <h3>Virtual Brain Optimization for Neuromodulation</h3>
+      <div class="project-meta">RL (DDPG) · TensorFlow · OHBM 2024</div>
 
+      <!-- 이미지: virtual-brain -->
+      <img src="images/virtual-brain.png" alt="Virtual Brain connectivity and RL structure" class="project-image" />
 
-  <!-- PROJECT 4 -->
-  <div class="project-block">
-    <h3>EEG-based OSA Prediction (XAI)</h3>
-    <div class="project-meta">XGBoost · SVM · SHAP</div>
+      <strong>Problem</strong>
+      <ul>
+        <li>Personalized brain stimulation required slow, expensive simulations and manual parameter sweeps.</li>
+      </ul>
 
-    <strong>Problem</strong>
-    <ul>
-      <li>EEG data was noisy and difficult to interpret, complicating OSA severity prediction.</li>
-    </ul>
+      <strong>Approach</strong>
+      <ul>
+        <li>Integrated fMRI, sMRI, and DTI into individualized virtual brain models.</li>
+        <li>Designed a DDPG reinforcement learning pipeline to search over 6 physiological parameters per node.</li>
+        <li>Evaluated performance via cosine similarity between simulated and real neural signals.</li>
+      </ul>
 
-    <strong>Approach</strong>
-    <ul>
-      <li>Extracted 29 EEG features and standardized channel-level entities.</li>
-      <li>Trained multiple ML models to evaluate predictive performance.</li>
-      <li>Applied SHAP to surface clinically meaningful EEG channels.</li>
-    </ul>
+      <strong>Impact</strong>
+      <ul>
+        <li>Improved simulation similarity by <b>6.2%</b> on average (up to 15.8%).</li>
+        <li>Reduced runtime by <b>3.6×</b> compared to grid search.</li>
+        <li>Results presented as a poster at <b>OHBM 2024</b>.</li>
+      </ul>
+    </div>
 
-    <strong>Impact</strong>
-    <ul>
-      <li>Achieved <b>85–88%</b> prediction accuracy.</li>
-      <li>Identified top contributing channels supporting clinical decision-making.</li>
-    </ul>
-  </div>
+    <!-- PROJECT 4 -->
+    <div class="project-block">
+      <h3>EEG-based OSA Prediction (XAI)</h3>
+      <div class="project-meta">XGBoost · SVM · SHAP</div>
 
-</section>
+      <!-- 이미지: eeg-xai -->
+      <img src="images/eeg-xai.png" alt="EEG feature importance and model comparison" class="project-image" />
+
+      <strong>Problem</strong>
+      <ul>
+        <li>EEG data was high-dimensional and noisy, making OSA severity and treatment planning difficult to personalize.</li>
+      </ul>
+
+      <strong>Approach</strong>
+      <ul>
+        <li>Extracted 29 EEG features per patient and standardized channel-level entities.</li>
+        <li>Trained and compared multiple ML models (RF, XGBoost, SVR).</li>
+        <li>Used SHAP to highlight clinically meaningful EEG features and channels.</li>
+      </ul>
+
+      <strong>Impact</strong>
+      <ul>
+        <li>Achieved <b>85–88%</b> prediction accuracy for AHI and SpO₂.</li>
+        <li>Proposed a personalized CPAP pressure decision-support flow grounded in interpretable biomarkers.</li>
+      </ul>
+    </div>
+
+  </section>
 
 </div>
 
 <footer>
-  © 2025 Juhyeong Kang — Built with clarity & minimalism.
+  © 2025 Juhyeong Kang
 </footer>
 
 </body>
