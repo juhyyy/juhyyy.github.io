@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Juhyeong Kang – AI & Deployment Strategy Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card-bg: #ffffff;
+      --accent: #003f8b;
+      --text-main: #111827;
+      --text-sub: #4b5563;
+      --border-soft: #e5e7eb;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem 1rem;
+    }
+    .tagline {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+    h1 { font-size: 2.1rem; margin: 0 0 0.4rem; }
+    .subtitle {
+      color: var(--text-sub);
+      max-width: 640px;
+      font-size: 0.95rem;
+    }
+    .pill-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;
+    }
+    .pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #e5f0ff;
+      border: 1px solid #d0defb;
+      font-size: 0.8rem;
+    }
+    main {
+      max-width: 960px; margin: 0 auto; padding: 0 1.5rem 3rem;
+    }
+    section { margin-top: 2rem; }
+    section h2 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .section-subtitle {
+      font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1.2rem;
+    }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 768px) {
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 0.7rem;
+      padding: 1.1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+    .card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+    .meta { color: var(--text-sub); font-size: 0.8rem; margin-bottom: 0.6rem; }
+    .label {
+      font-size: 0.8rem; font-weight: 600; color: var(--text-sub);
+      text-transform: uppercase; margin-top: 0.4rem;
+    }
+    .chips {
+      display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem;
+    }
+    .chip {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      font-size: 0.75rem; color: #374151;
+    }
+    footer {
+      max-width: 960px; margin: 0 auto; padding: 1rem 1.5rem 2rem;
+      color: #9ca3af; font-size: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="tagline">AI & Deployment Strategy Portfolio</div>
+    <h1>Juhyeong Kang</h1>
+    <p class="subtitle">
+      I turn messy, high-stakes problems into structured, data-driven workflows.
+      My background spans medical AI, reinforcement learning, and LLM + RAG
+      systems, with a focus on designing solutions that actually fit how people work.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Deployment Strategist Candidate</span>
+      <span class="pill">AI & Data Workflows</span>
+      <span class="pill">RAG · RL · XAI</span>
+      <span class="pill">KOR / ENG</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Selected Work</h2>
+      <p class="section-subtitle">
+        Framed with Problem → Approach → Impact, aligned with Palantir thinking.
+      </p>
+
+      <div class="grid grid-2">
+
+        <!-- Project 1 -->
+        <article class="card">
+          <h3>LLM + RAG Intent Analysis Pipeline</h3>
+          <div class="meta">DX Education · 2025</div>
+
+          <div class="label">Problem</div>
+          <p>Existing intent classifier was unstable (≈57%) and broke automation.</p>
+
+          <div class="label">Approach</div>
+          <p>Designed modular RAG pipeline (LangChain/LangGraph) with robust schema validation.</p>
+
+          <div class="label">Impact</div>
+          <p>Accuracy ↑ 84%, reasoning errors ↓ 62.6%, parsing stability 99%.</p>
+
+          <div class="chips">
+            <span class="chip">LangChain</span>
+            <span class="chip">LangGraph</span>
+            <span class="chip">Pydantic</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <h3>Virtual Brain Optimization (RL)</h3>
+          <div class="meta">Research · 2023–2024</div>
+
+          <div class="label">Problem</div>
+          <p>Neuromodulation parameters manually tuned; slow & inconsistent.</p>
+
+          <div class="label">Approach</div>
+          <p>Applied DDPG on The Virtual Brain simulations for policy optimization.</p>
+
+          <div class="label">Impact</div>
+          <p>Similarity ↑ 6.2% avg (up to 15.87%); runtime 3.6× faster.</p>
+
+          <div class="chips">
+            <span class="chip">DDPG</span>
+            <span class="chip">RL</span>
+            <span class="chip">TensorFlow</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:kju325@gmail.com">kju325@gmail.com</a><br>
+      LinkedIn: <a href="https://linkedin.com/in/juhy">linkedin.com/in/juhy</a></p>
+    </section>
+
+  </main>
+
+  <footer>© 2025 · Juhyeong Kang</footer>
+</body>
+</html>
