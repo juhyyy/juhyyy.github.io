@@ -109,6 +109,12 @@ nav .right a:hover {
   background: var(--bg-ontology);
 }
 
+.ontology-wrapper p {
+  margin-top: 0;
+  font-size: 14.5px;
+  color: var(--text-gray);
+}
+
 .ontology-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -199,7 +205,6 @@ footer {
 </style>
 </head>
 
-
 <body>
 
 <!-- NAV -->
@@ -210,10 +215,9 @@ footer {
     <a href="#ontology">Ontology</a>
     <a href="#work">Work</a>
     <a href="mailto:kju325@gmail.com">Contact</a>
-    <a href="YOUR_CV_LINK_HERE" target="_blank">Download CV</a>
+    <a href="CV_Palantir_Juhyeong_Kang.pdf" target="_blank">Download CV</a>
   </div>
 </nav>
-
 
 <div class="wrapper">
 
@@ -223,7 +227,8 @@ footer {
     <div class="hero-role">Deployment Strategy & Applied AI</div>
     <p class="hero-summary">
       I design data workflows that connect users, models, and operations. 
-      My work focuses on turning noisy, fragmented information into structured pipelines that enable clearer decisions in high-stakes environments.
+      My work focuses on turning noisy, fragmented information into structured systems that 
+      make decisions clearer and faster in high-stakes environments.
     </p>
   </section>
 
@@ -233,8 +238,8 @@ footer {
     <p>
       I work across problem framing, data modeling, and workflow design. 
       From healthcare AI to LLM-based reasoning systems, I focus on how people actually use tools:
-      what questions they ask, which signals they trust, and how data needs to be shaped 
-      so it becomes useful in their day-to-day decisions.
+      which questions they ask, which signals they trust, and how data needs to be shaped 
+      so it becomes reliable context inside their day-to-day decisions.
     </p>
   </section>
 
@@ -242,9 +247,9 @@ footer {
   <section id="ontology" class="section">
     <h2>System Ontology</h2>
     <div class="ontology-wrapper">
-      <p style="margin-top:0; font-size:14.5px; color:var(--text-gray);">
+      <p>
         A simplified view of how my work connects <b>data sources</b>, <b>models</b>, <b>workflows</b>, 
-        and <b>operational outcomes</b> — similar in spirit to a Foundry Ontology, where objects and relationships 
+        and <b>operational outcomes</b> — similar in spirit to an Ontology, where objects and relationships 
         are explicit rather than implicit.
       </p>
 
@@ -252,20 +257,20 @@ footer {
         <div class="ontology-node">
           <div class="ontology-title">Data Sources</div>
           <ul>
-            <li>4D Ultrasound Frames & Medical Imaging</li>
-            <li>EEG Signals (AHI, SpO₂-related)</li>
-            <li>Behavioral & Dialogue Logs (ASD)</li>
-            <li>Text Logs for Intent Classification</li>
+            <li>4D ultrasound frames & medical imaging</li>
+            <li>EEG signals (AHI, SpO₂-related)</li>
+            <li>Behavioral & dialogue logs (ASD learners)</li>
+            <li>Text logs for intent classification</li>
           </ul>
         </div>
 
         <div class="ontology-node">
           <div class="ontology-title">Model Objects</div>
           <ul>
-            <li>LLM + RAG Intent Engine</li>
-            <li>Interaction Clusters & Profiles</li>
-            <li>Virtual Brain RL Optimizer</li>
-            <li>EEG-based OSA Risk Models</li>
+            <li>LLM + RAG intent engine</li>
+            <li>Interaction clusters & learner profiles</li>
+            <li>Virtual brain RL optimizer</li>
+            <li>EEG-based OSA risk models</li>
           </ul>
         </div>
 
@@ -301,26 +306,44 @@ footer {
       <h3>LLM + RAG Intent Analysis Pipeline</h3>
       <div class="project-meta">LangChain · LangGraph · FAISS · Pydantic</div>
 
-      <!-- 이미지: rag-intent -->
       <img src="images/rag-intent.png" alt="RAG intent analysis workflow" class="project-image" />
 
       <strong>Problem</strong>
       <ul>
-        <li>User logs were noisy, ambiguous, and inconsistently labeled, leading to unreliable intent classification.</li>
+        <li>
+          User logs were noisy, ambiguous, and inconsistently labeled, making intent classification 
+          unreliable for both analytics and downstream automation.
+        </li>
       </ul>
 
-      <strong>Approach</strong>
+      <strong>Data & Structuring</strong>
       <ul>
-        <li>Redefined intent categories into meaningful semantic buckets aligned with user behavior.</li>
-        <li>Built a FAISS-backed RAG pipeline to retrieve grounded evidence for each prediction.</li>
-        <li>Enforced response structure using Pydantic schema validation and retry logic in LangGraph.</li>
+        <li>
+          Consolidated multi-source text logs and legacy labels into a cleaner schema of behavior-based intents.
+        </li>
+        <li>
+          Defined canonical fields (scenario, target user type, evidence span, confidence) to standardize outputs.
+        </li>
+      </ul>
+
+      <strong>Solution Design</strong>
+      <ul>
+        <li>
+          Built a FAISS-backed RAG pipeline to surface past, high-signal examples as evidence for each prediction.
+        </li>
+        <li>
+          Used LangGraph to orchestrate retrieval, LLM reasoning, and validation steps.
+        </li>
+        <li>
+          Enforced response structure with Pydantic schema validation and retry logic for malformed outputs.
+        </li>
       </ul>
 
       <strong>Impact</strong>
       <ul>
         <li>Accuracy improved from <b>57% → 84%</b>.</li>
         <li>Reasoning errors reduced by <b>62.6%</b>, with RAG-only errors down by 14.1%.</li>
-        <li>Parsing stability reached <b>99%</b> with zero unsupported, evidence-free answers.</li>
+        <li>Parsing stability reached <b>99%</b>, with no unsupported, evidence-free answers.</li>
       </ul>
     </div>
 
@@ -329,25 +352,49 @@ footer {
       <h3>Behavioral Interaction Profiling (ASD)</h3>
       <div class="project-meta">KMeans · UMAP · LLM Prompt Templates</div>
 
-      <!-- 이미지: asd-cluster -->
       <img src="images/asd-cluster.png" alt="ASD cluster visualization" class="project-image" />
 
       <strong>Problem</strong>
       <ul>
-        <li>ASD learner behavior varied widely, making personalized scenario design inconsistent and hard to scale.</li>
+        <li>
+          ASD learner behavior varied widely, making it hard for educators to design 
+          consistent, personalized social-skill training scenarios.
+        </li>
       </ul>
 
-      <strong>Approach</strong>
+      <strong>Data & Structuring</strong>
       <ul>
-        <li>Standardized dialogue and behavior logs into comparable metrics (turn-taking, utterance length, question/command ratios).</li>
-        <li>Clustered patterns using KMeans + UMAP and validated internal consistency (e.g., silhouette, DBI).</li>
-        <li>Mapped each cluster to conversational templates and LLM prompt rules for scenario generation.</li>
+        <li>
+          Standardized dialogue and interaction logs into comparable metrics 
+          (turn-taking ratio, utterance length, question/command balance).
+        </li>
+        <li>
+          Aggregated these into learner-level profiles suitable for clustering and downstream scenario mapping.
+        </li>
+      </ul>
+
+      <strong>Solution Design</strong>
+      <ul>
+        <li>
+          Applied KMeans + UMAP to derive interpretable clusters of interaction styles.
+        </li>
+        <li>
+          Evaluated internal consistency using silhouette score and Davies–Bouldin index.
+        </li>
+        <li>
+          For each cluster, defined conversational templates and LLM prompt rules 
+          to generate tailored practice scenarios.
+        </li>
       </ul>
 
       <strong>Impact</strong>
       <ul>
-        <li>Produced interpretable profiles with key traits, cautions, and recommended feedback strategies.</li>
-        <li>Formed the core module for an ASD social-skills education concept, including flow diagrams and demo scenarios.</li>
+        <li>
+          Produced profiles that summarized key traits, cautions, and recommended feedback strategies.
+        </li>
+        <li>
+          Formed the core module for an ASD social-skills education concept, including flow diagrams and demo scripts.
+        </li>
       </ul>
     </div>
 
@@ -356,24 +403,39 @@ footer {
       <h3>Virtual Brain Optimization for Neuromodulation</h3>
       <div class="project-meta">RL (DDPG) · TensorFlow · OHBM 2024</div>
 
-      <!-- 이미지: virtual-brain -->
-      <img src="images/virtual-brain.png" alt="Virtual Brain connectivity and RL structure" class="project-image" />
+      <img src="images/virtual-brain.png" alt="Virtual brain connectivity and RL structure" class="project-image" />
 
       <strong>Problem</strong>
       <ul>
-        <li>Personalized brain stimulation required slow, expensive simulations and manual parameter sweeps.</li>
+        <li>
+          Personalized brain stimulation required slow, expensive simulations and manual parameter sweeps, 
+          limiting how many candidates could be reasonably explored.
+        </li>
       </ul>
 
-      <strong>Approach</strong>
+      <strong>Data & Structuring</strong>
       <ul>
-        <li>Integrated fMRI, sMRI, and DTI into individualized virtual brain models.</li>
-        <li>Designed a DDPG reinforcement learning pipeline to search over 6 physiological parameters per node.</li>
-        <li>Evaluated performance via cosine similarity between simulated and real neural signals.</li>
+        <li>
+          Integrated fMRI, sMRI, and DTI into individualized virtual brain models with node-level physiological parameters.
+        </li>
+        <li>
+          Defined a parameter space of 6 variables per node, representing excitatory/inhibitory balances and time constants.
+        </li>
+      </ul>
+
+      <strong>Solution Design</strong>
+      <ul>
+        <li>
+          Designed a DDPG reinforcement learning pipeline to search the high-dimensional parameter space efficiently.
+        </li>
+        <li>
+          Used cosine similarity between simulated and empirical neural signals as the optimization objective.
+        </li>
       </ul>
 
       <strong>Impact</strong>
       <ul>
-        <li>Improved simulation similarity by <b>6.2%</b> on average (up to 15.8%).</li>
+        <li>Improved simulation similarity by <b>6.2%</b> on average (up to 15.8% for some subjects).</li>
         <li>Reduced runtime by <b>3.6×</b> compared to grid search.</li>
         <li>Results presented as a poster at <b>OHBM 2024</b>.</li>
       </ul>
@@ -382,27 +444,44 @@ footer {
     <!-- PROJECT 4 -->
     <div class="project-block">
       <h3>EEG-based OSA Prediction (XAI)</h3>
-      <div class="project-meta">XGBoost · SVM · SHAP</div>
+      <div class="project-meta">XGBoost · RF · SVR · SHAP</div>
 
-      <!-- 이미지: eeg-xai -->
       <img src="images/eeg-xai.png" alt="EEG feature importance and model comparison" class="project-image" />
 
       <strong>Problem</strong>
       <ul>
-        <li>EEG data was high-dimensional and noisy, making OSA severity and treatment planning difficult to personalize.</li>
+        <li>
+          EEG was high-dimensional and noisy, making it difficult to personalize OSA severity assessment 
+          and CPAP pressure decisions.
+        </li>
       </ul>
 
-      <strong>Approach</strong>
+      <strong>Data & Structuring</strong>
       <ul>
-        <li>Extracted 29 EEG features per patient and standardized channel-level entities.</li>
-        <li>Trained and compared multiple ML models (RF, XGBoost, SVR).</li>
-        <li>Used SHAP to highlight clinically meaningful EEG features and channels.</li>
+        <li>
+          Engineered 29 EEG features per channel and standardized them into patient-level feature sets.
+        </li>
+        <li>
+          Framed prediction tasks for AHI and SpO₂ so they aligned with how clinicians interpret severity.
+        </li>
+      </ul>
+
+      <strong>Solution Design</strong>
+      <ul>
+        <li>
+          Trained and compared multiple ML models (RF, XGBoost, SVR) on the engineered feature space.
+        </li>
+        <li>
+          Applied SHAP to highlight influential features and channels in a clinician-friendly format.
+        </li>
       </ul>
 
       <strong>Impact</strong>
       <ul>
         <li>Achieved <b>85–88%</b> prediction accuracy for AHI and SpO₂.</li>
-        <li>Proposed a personalized CPAP pressure decision-support flow grounded in interpretable biomarkers.</li>
+        <li>
+          Proposed a personalized CPAP pressure decision-support flow grounded in interpretable EEG biomarkers.
+        </li>
       </ul>
     </div>
 
