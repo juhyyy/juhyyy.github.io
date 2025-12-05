@@ -175,7 +175,7 @@ nav .right a:hover {
   margin-bottom: 14px;
 }
 
-/* PROJECT IMAGE */
+/* PROJECT IMAGE (기본 단일 이미지용) */
 .project-image {
   width: 100%;
   border-radius: 10px;
@@ -202,6 +202,27 @@ footer {
   color: var(--text-gray);
   font-size: 14px;
 }
+
+/* FIGURE GRID (멀티 이미지용) */
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.figure-item img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  object-fit: cover;
+}
+
+.figure-caption {
+  font-size: 12.5px;
+  color: var(--text-gray);
+  margin-top: 4px;
+}
 </style>
 </head>
 
@@ -215,7 +236,8 @@ footer {
     <a href="#ontology">Ontology</a>
     <a href="#work">Work</a>
     <a href="mailto:kju325@gmail.com">Contact</a>
-    <a href="assests/CV_JuhyeongKang.pdf" target="_blank">Download CV</a>
+    <!-- 🔹 assets 경로 오타 수정 -->
+    <a href="assets/CV_JuhyeongKang.pdf" target="_blank">Download CV</a>
   </div>
 </nav>
 
@@ -306,7 +328,20 @@ footer {
       <h3>LLM + RAG Intent Analysis Pipeline</h3>
       <div class="project-meta">LangChain · LangGraph · FAISS · Pydantic</div>
 
-      <img src="images/rag-intent.png" alt="RAG intent analysis workflow" class="project-image" />
+      <div class="figure-grid">
+        <div class="figure-item">
+          <img src="images/rag-intent-f1-workflow.png" alt="Intent inference workflow" />
+          <div class="figure-caption">Figure 1. Intent inference workflow</div>
+        </div>
+        <div class="figure-item">
+          <img src="images/rag-intent-f2-labels.png" alt="Korean intent dataset and label distribution" />
+          <div class="figure-caption">Figure 2. Korean utterance samples and label distribution</div>
+        </div>
+        <div class="figure-item">
+          <img src="images/rag-intent-f3-performance.png" alt="Performance comparison with and without RAG" />
+          <div class="figure-caption">Figure 3. RAG-based improvement over baseline ML and vanilla LLM</div>
+        </div>
+      </div>
 
       <strong>Problem</strong>
       <ul>
@@ -352,6 +387,7 @@ footer {
       <h3>Behavioral Interaction Profiling (ASD)</h3>
       <div class="project-meta">KMeans · UMAP · LLM Prompt Templates</div>
 
+      <!-- 아직 단일 이미지라면 이 상태로 유지 -->
       <img src="images/asd-cluster.png" alt="ASD cluster visualization" class="project-image" />
 
       <strong>Problem</strong>
@@ -403,7 +439,20 @@ footer {
       <h3>Virtual Brain Optimization for Neuromodulation</h3>
       <div class="project-meta">RL (DDPG) · TensorFlow · OHBM 2024</div>
 
-      <img src="images/virtual-brain.png" alt="Virtual brain connectivity and RL structure" class="project-image" />
+      <div class="figure-grid">
+        <div class="figure-item">
+          <img src="images/virtual-brain-f1-flow.png" alt="Overall research pipeline" />
+          <div class="figure-caption">Figure 1. Overall research pipeline and data flow</div>
+        </div>
+        <div class="figure-item">
+          <img src="images/virtual-brain-f2-connectivity.png" alt="Virtual brain connectivity visualization" />
+          <div class="figure-caption">Figure 2. Virtual brain connectivity and multimodal integration</div>
+        </div>
+        <div class="figure-item">
+          <img src="images/virtual-brain-f3-ddpg.png" alt="DDPG model architecture" />
+          <div class="figure-caption">Figure 3. DDPG model structure for parameter optimization</div>
+        </div>
+      </div>
 
       <strong>Problem</strong>
       <ul>
@@ -446,7 +495,35 @@ footer {
       <h3>EEG-based OSA Prediction (XAI)</h3>
       <div class="project-meta">XGBoost · RF · SVR · SHAP</div>
 
-      <img src="images/eeg-xai.png" alt="EEG feature importance and model comparison" class="project-image" />
+      <div class="figure-grid">
+        <div class="figure-item">
+          <img src="images/eeg-f1-flow.png" alt="EEG preprocessing and prediction workflow" />
+          <div class="figure-caption">
+            Figure 1. EEG preprocessing and prediction workflow (AHI / SpO₂).
+          </div>
+        </div>
+
+        <div class="figure-item">
+          <img src="images/eeg-f2-signal.png" alt="EEG raw signal and engineered features" />
+          <div class="figure-caption">
+            Figure 2. EEG raw signals and engineered feature extraction per channel.
+          </div>
+        </div>
+
+        <div class="figure-item">
+          <img src="images/eeg-f3-models.png" alt="Model comparison with RF, XGBoost, SVR" />
+          <div class="figure-caption">
+            Figure 3. Model comparison across RF, XGBoost, and SVR for AHI/SpO₂ prediction.
+          </div>
+        </div>
+
+        <div class="figure-item">
+          <img src="images/eeg-f4-shap.png" alt="SHAP-based feature importance" />
+          <div class="figure-caption">
+            Figure 4. SHAP-based feature and channel importance for clinical interpretation.
+          </div>
+        </div>
+      </div>
 
       <strong>Problem</strong>
       <ul>
