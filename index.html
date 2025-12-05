@@ -209,7 +209,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px;
   margin-bottom: 18px;
-  align-items: start; /* 캡션 위로 붙지 않게 */
+  align-items: start; /* 캡션과 간격 유지 */
 }
 
 .figure-item {
@@ -219,18 +219,21 @@ footer {
 
 .figure-item img {
   width: 100%;
-  height: 180px;              /* 🔥 고정 높이 추가 */
-  object-fit: cover;          /* 🔥 비율 유지하면서 잘라냄 */
+  height: 180px;          /* 🔹 높이 동일하게 유지 (줄 맞추기용) */
+  object-fit: contain;    /* 🔹 이미지 자르지 않음 */
+  object-position: center;
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.06);
+  background: #ffffff;    /* 🔹 여백 부분 흰색 채우기 */
 }
 
 .figure-caption {
   font-size: 12.5px;
   color: var(--text-gray);
   margin-top: 6px;
-  min-height: 32px;           /* 🔥 캡션영역 높이 통일 */
+  min-height: 32px;       /* 🔹 캡션 높이 통일 */
 }
+
 
 </style>
 </head>
