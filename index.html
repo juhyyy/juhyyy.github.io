@@ -206,23 +206,32 @@ footer {
 /* FIGURE GRID (멀티 이미지용) */
 .figure-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 12px;
-  margin-bottom: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+  align-items: start; /* 캡션 위로 붙지 않게 */
+}
+
+.figure-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .figure-item img {
   width: 100%;
+  height: 180px;              /* 🔥 고정 높이 추가 */
+  object-fit: cover;          /* 🔥 비율 유지하면서 잘라냄 */
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.06);
-  object-fit: cover;
 }
 
 .figure-caption {
   font-size: 12.5px;
   color: var(--text-gray);
-  margin-top: 4px;
+  margin-top: 6px;
+  min-height: 32px;           /* 🔥 캡션영역 높이 통일 */
 }
+
 </style>
 </head>
 
@@ -389,6 +398,25 @@ footer {
 
       <!-- 아직 단일 이미지라면 이 상태로 유지 -->
       <img src="images/asd-cluster.png" alt="ASD cluster visualization" class="project-image" />
+      <div class="figure-grid">
+
+      <div class="figure-item">
+        <img src="images/asd-f1-eda.png" alt="EDA of ASD interaction metrics" />
+        <div class="figure-caption">Figure 1. EDA of interaction metrics.</div>
+      </div>
+
+      <div class="figure-item">
+        <img src="images/asd-f2-cluster.png" alt="Cluster visualization using KMeans & UMAP" />
+        <div class="figure-caption">Figure 2. Cluster visualization (KMeans + UMAP).</div>
+      </div>
+
+  <div class="figure-item">
+    <img src="images/asd-f3-scenario.png" alt="Scenario mapping templates" />
+    <div class="figure-caption">Figure 3. Scenario templates mapped to clusters.</div>
+  </div>
+
+</div>
+
 
       <strong>Problem</strong>
       <ul>
